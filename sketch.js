@@ -20,7 +20,7 @@ score=0
      //   friction:1,
         //density:1
 //}
-arrow=new Arrow(130,130,90,70)
+arrow=new Arrow(130,130,90,64)
 
   slingshot=new SlingShot(arrow.body,{x:138,y:120})
   
@@ -58,7 +58,7 @@ ground2.display();
 ground.display();
 ground3.display();
 ground4.display();
-
+console.log(arrow.body.position.x,arrow.body.position.y);
 textFont("broadway")
 textSize(28)
 text("sydney",430,350)
@@ -121,14 +121,14 @@ score=score+1
 gameState="incremented"
 }
 
-if(gameState==="launched"&&locationn==="sydney"&&arrow.body.position.x<880&&arrow.body.position.x>760&&
+if(gameState==="launched"&&locationn==="rome"&&arrow.body.position.x<880&&arrow.body.position.x>760&&
 arrow.body.position.y<450&&arrow.body.position.y<250)
 {
 score=score+1
 gameState="incremented"
 }
 
-if(gameState==="launched"&&locationn==="sydney"&&arrow.body.position.x<1050&&arrow.body.position.x>930&&
+if(gameState==="launched"&&locationn==="toronto"&&arrow.body.position.x<1050&&arrow.body.position.x>930&&
 arrow.body.position.y<450&&arrow.body.position.y<250)
 {
 score=score+1
@@ -145,6 +145,11 @@ text ("text in which the name of city will be written where "+
 text(" you will be correct"+
 " you will get one point and once you shoot the arrow on the press of space key arrow will be again attached to "+
 "the bow. HAPPY PLAYING!! ",120,40)
+strokeWeight(3);
+if(gameState==="launched"||gameState==="incremented")
+{
+  line(138,95,138,185)
+}
 
 
 }   
